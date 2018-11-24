@@ -4,7 +4,7 @@ function preload(){
   img2 = loadImage("rainbow.png")
 }
 
-let t = 1; // time variable
+let t = 1;
 
 function setup() {
   createCanvas(1260, 700);
@@ -13,7 +13,7 @@ function setup() {
 }
 
 function draw() {
-  background(50, 0,100); // translucent background (creates trails)
+  background(50, 0,100);
 
     //image
  // imageMode(CORNER):
@@ -23,24 +23,20 @@ function draw() {
   image(img2, mouseX, mouseY);
 
 
-  // make a x and y grid of ellipses
+
   for (let x = 0; x <= width; x = x + 30) {
     for (let y = 0; y <= height; y = y + 30) {
-      // starting point of each circle depends on mouse position
       let xAngle = map(mouseX, 1, width, -2 * PI, 10 * PI, true);
       let yAngle = map(mouseY, 1, height, -5 * PI, 5 * PI, true);
-      // and also varies based on the particle's location
       let angle = xAngle * (x / width) + yAngle * (y / height);
 
-      // each particle moves in a circle
       let myX = x + 100 * cos(1 * PI * t + angle);
       let myY = y + 90 * sin(2 * PI * t + angle);
 
-      ellipse(myX, myY, 4); // draw particle
-    }
+      ellipse(myX, myY, 4);
   }
 
-  t = t + 0.003; // update time
+  t = t + 0.003; 
 
 
 
