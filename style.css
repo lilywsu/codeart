@@ -1,12 +1,8 @@
 html, body {
-  max-width: 1500px;
+  max-width: 100px;
   margin: auto;
   padding: 0;
 }
 canvas {
   display: block;
-}
-
-img {
-  max-width: 1500px;
 }
